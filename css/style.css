@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,800&family=Roboto:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,800&family=Roboto:wght@400;700;900&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: none;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    height: 100vh;
+    background-color: #333;
+    background-image: url(https://giffiles.alphacoders.com/209/209343.gif);
+    background-size: cover;
+    background-position: center;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #4f5a68;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: #f0a4a0;
+}
+
+/* b:hover {
+    color: #efbccf;
+} */
+
+/* Header */
+header {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* backdrop-filter: blur(15px);
+    background: rgba(33,33,33,0.05); */
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .logo:hover {
+    scale: 1.05;
+    color: white;
+}
+
+.navber:active {
+    scale:0.95;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+.action_btn {
+    background-color: #4f5a68;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: bold;
+    cursor: pointer;
+}
+
+.action_btn:hover {
+    scale: 1.05;
+    color: white;
+}
+
+.action_btn:active {
+    scale:0.95;
+}
+
+/* MINI MENU */
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(33,33,33,0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    z-index: 1;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* HERO SECTION */
+section#hero {
+    /* height: calc(100vh - 60px); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #947b84;
+    position: fixed;
+    top: 50%; /* จัดให้อยู่ตรงกลางด้านแนวตั้ง */
+    left: 50%; /* จัดให้อยู่ตรงกลางด้านแนวนอน */
+    transform: translate(-50%, -50%); /* ใช้ transform เพื่อกำหนดให้อยู่ตรงกลางทั้งแนวตั้งและนอน */
+    width: 45vh; /* กำหนดความกว้างเป็น 80% ของ viewport width */
+    height: calc(600px - 20px); /* กำหนดความสูงเป็น 80% ของ viewport height */
+    border-radius: 10px; /* กำหนดความมนของขอบสี่เหลี่ยม */
+    backdrop-filter: blur(5px);
+    background: '../image/logo_head.png';
+    background: rgba(33,33,33,0.02);
+    border: 1px solid rgba(93,94,130,0.15);
+}
+
+
+#hero h1 {
+    color: #fe9f19;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    
+}
+
+#hero h4 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    color: #f0a4a0;
+}
+
+#hero h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    color: #a9bfc6;
+    border-left: 6px solid#edb5c1;
+    border-right: 6px solid#edb5c1;
+}
+
+#hero p {
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+#hero a {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    color:#f0a4a0;
+}
+
+.fade-in-image img {
+    max-width: 50%; /* Ensure the image doesn't exceed the container's width */
+    max-height: auto; /* Ensure the image doesn't exceed the container's height */
+    display: inline-block; /* Allow vertical alignment */
+    vertical-align: middle; /* Vertically center the image */
+    border: 2px solid #ccc; /* กำหนดกรอบให้กับรูปภาพ */
+    border-radius: 100px; /* กำหนดมนของกรอบ */
+    padding: 1px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .navbar .links,
+    .navbar .action_btn {
+        display:none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+}
+
+/* FADE UI */
+
+.fade-in-image { animation: fadeIn 1s; }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
